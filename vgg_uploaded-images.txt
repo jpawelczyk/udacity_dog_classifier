@@ -3,12 +3,13 @@ Command Line Arguments:
     arch = vgg 
  dogfile = dognames.txt
 
-Pet Image Label Dictionary has 4 key-value pairs.
-Below are 4 of them:
+Pet Image Label Dictionary has 5 key-value pairs.
+Below are 5 of them:
  1 key:                     Dog_01.jpg  label:                        dog
  2 key:                     Dog_02.jpg  label:                        dog
  3 key:             Stethoscope_01.jpg  label:                stethoscope
  4 key:                  Turtle_01.jpg  label:                     turtle
+ 5 key:                    .Dog_02.jpg  label:                           
 
      MATCH:
 
@@ -18,6 +19,9 @@ Real:                stethoscope   Classifier:                    stethoscope
                  Turtle_01.jpg: 
 Real:                     turtle   Classifier: leatherback turtle, leatherback, leathery turtle, Dermochelys coriacea
 
+                   .Dog_02.jpg: 
+Real:                              Classifier:                     Rottweiler
+
  NOT A MATCH:
 
                     Dog_01.jpg: 
@@ -26,7 +30,7 @@ Real:                        dog   Classifier:                     Rottweiler
                     Dog_02.jpg: 
 Real:                        dog   Classifier:                     Rottweiler
 
-# Total Images 4 # Matches: 2 # NOT Matches: 2
+# Total Images 5 # Matches: 3 # NOT Matches: 2
 
      MATCH:
 
@@ -38,6 +42,10 @@ PetLabelDog: 0  ClassLabelDog: 0
 Real:                     turtle   Classifier: leatherback turtle, leatherback, leathery turtle, Dermochelys coriacea  
 PetLabelDog: 0  ClassLabelDog: 0
 
+                   .Dog_02.jpg: 
+Real:                              Classifier:                     Rottweiler  
+PetLabelDog: 0  ClassLabelDog: 1
+
  NOT A MATCH:
 
                     Dog_01.jpg: 
@@ -48,30 +56,34 @@ PetLabelDog: 1  ClassLabelDog: 1
 Real:                        dog   Classifier:                     Rottweiler  
 PetLabelDog: 1  ClassLabelDog: 1
 
-# Total Images 4 # Matches: 2 # NOT Matches: 2
+# Total Images 5 # Matches: 3 # NOT Matches: 2
 
  ** Statistics from calculates_results_stats() function:
-N Images:  4  N Dog Images:  2  N NotDog Images:  2 
-Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+N Images:  5  N Dog Images:  2  N NotDog Images:  3 
+Pct Corr dog: 100.0 Pct Corr NOTdog:  66.7  Pct Corr Breed:   0.0
 
  ** Check Statistics - calculated from this function as a check:
-N Images:  4  N Dog Images:  2  N NotDog Images:  2 
-Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+N Images:  5  N Dog Images:  2  N NotDog Images:  3 
+Pct Corr dog: 100.0 Pct Corr NOTdog:  66.7  Pct Corr Breed:   0.0
 
 
 - GENERAL -
 	Using CNN model architecure vgg
 
 - COUNTS -
-	# of images = 4
+	# of images = 5
 	# of dog images = 2
-	# of "not-a" dog images = 2
+	# of "not-a" dog images = 3
 
 - PERCENTAGES -
 	% correct dogs = 100.0
 	% correct breed = 0.0
-	% correct "not-a" dog = 100.0
-	% match = 50.0
+	% correct "not-a" dog = 66.66666666666666
+	% match = 60.0
+
+- INCORRECT DOGS -
+	File: .Dog_02.jpg - Classified as "dog"
+
 
 - INCORRECT BREEDS -
 	File: Dog_01.jpg - Classified as Rottweiler

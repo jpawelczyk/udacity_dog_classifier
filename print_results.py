@@ -84,7 +84,7 @@ def print_results(results_dict, results_stats_dict, model,
         
         for key, val in results_dict.items():
             if sum(val[3:]) == 1:
-                print('\tFile: {} - Classified as {}'.format(key, ('"dog"' if val[4] == 1 else '"not-a dog"')))
+                print('\tFile: {} - Classified as {} (Pet Label: {})'.format(key, ('"dog"' if val[4] == 1 else '"not-a dog"'), val[0]))
                 
         print('\n')
                 
@@ -93,6 +93,6 @@ def print_results(results_dict, results_stats_dict, model,
         
         for key, val in results_dict.items():
             if sum(val[3:]) == 2 and val[2] == 0:
-                print('\tFile: {} - Classified as {}'.format(key, val[1]))
+                print('\tFile: {} - Classified as {} (Pet Label: {})'.format(key, val[1], val[0]))
                 
         print('\n')

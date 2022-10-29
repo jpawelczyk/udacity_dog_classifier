@@ -45,6 +45,7 @@ def get_pet_labels(image_dir):
     file_names = listdir(image_dir)
     
     for f in file_names:
-        results_dict[f] = [' '.join([t for t in f.split('_') if t.isalpha()]).strip().lower()]
+        if f[0] != '.':
+            results_dict[f] = [' '.join([t for t in f.split('_') if t.isalpha()]).strip().lower()]
     
     return results_dict

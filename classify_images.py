@@ -69,4 +69,4 @@ def classify_images(images_dir, results_dict, model):
     for key in results_dict.keys():
         pred_label = classifier(images_dir + key, model)
         results_dict[key].append(pred_label)
-        results_dict[key].append(1 if results_dict[key][0] in pred_label.lower() else 0)
+        results_dict[key].append(1 if results_dict[key][0] in pred_label.lower().strip() else 0)

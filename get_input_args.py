@@ -37,8 +37,8 @@ def get_input_args():
 
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--dir', type=str, default='pet_images/', help='path to image folder')
-    parser.add_argument('--arch', type=str, default='vgg', help='CNN architecture')
-    parser.add_argument('--dogfile', type=str, default='dognames.txt', help='path to dog names file')
+    parser.add_argument('--dir', type=str, default='pet_images/', help='enter path to pet image folder (default = pet_images/)')
+    parser.add_argument('--arch', type=str, default='vgg', choices=['vgg', 'alexnet', 'resnet'], help='enter CNN model architecture (supported: vgg, resnet, alexnet)')
+    parser.add_argument('--dogfile', type=str, default='dognames.txt', help='enter file with valid dog names (default = dognames.txt)')
     
     return parser.parse_args()
